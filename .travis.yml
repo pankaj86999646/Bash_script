@@ -1,3 +1,8 @@
+os: linux
+dist: focal
+group: edge
+language: python
+
 deploy:
   provider: script
   script: bash scripts/deploy.sh
