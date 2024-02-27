@@ -5,7 +5,7 @@ language: python
 python:
   - "3.8"
 script:
-  - pytest  # Adjust this command according to your project's testing framework
+  - python hello_world.py
 deploy:
   provider: script
   script: bash scripts/deploy.sh
