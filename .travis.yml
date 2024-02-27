@@ -6,14 +6,6 @@ language: python
 deploy:
   provider: script
   script: 
-        - echo arthanaharidas
-        - docker login -u "arthanaharidas" -p "${DOCKER_HUB_PASSWORD}"
-        - docker build -t hello-world-python .
-        - docker tag hello-world-python arthanaharidas/python-hello-world
-        - docker push arthanaharidas/python-hello-world
-        - export COSIGN_PASSWORD="${COS_PASSWORD}"
-        - yes | cosign sign --key cosign.key arthanaharidas/python-hello-world
-        - cosign verify --key cosign.pub arthanaharidas/python-hello-world
-        - docker logout
+        - python hello_world.py
   on:
     branch: main
